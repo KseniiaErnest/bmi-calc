@@ -114,13 +114,18 @@ html {
 .to-do-section {
   width: 97rem;
   height: 26rem;
-  background-color: aqua;
   margin: 0 auto;
-  margin-top: 4.5rem;
-  margin-bottom: 1rem;
   padding: 1.5rem 2rem 2rem;
   display: flex;
   align-items: center;
+  background: linear-gradient(
+    to bottom right,
+    rgba(171, 202, 238, 0.01),
+    rgba(52, 143, 246, 0.08)
+  );
+  border-radius: 30px;
+  margin-top: 4.5rem;
+  margin-bottom: 4.5rem;
 
 }
 
@@ -128,6 +133,82 @@ html {
   width: 72.5rem ;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: aliceblue;
   margin: 0 auto;
+  gap: 2rem;
+}
+
+
+.to-do-box h3 {
+  font-size: 1.5rem;
+  font-family: 'SemiBold';
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.to-do-box p {
+  font-family: "Inter-Regular";
+  line-height: 1.4;
+}
+
+/*  */
+
+.limitations-section {
+  width: 72.5rem;
+  margin: 0 auto;
+  margin-top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4.5rem;
+}
+
+
+.flex-contaier {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+
+}
+
+.limitation-box {
+  width: 22.8rem;
+  height: 10rem;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: rgba(24, 67, 116, 0.226) 0px 10px 36px 0px, rgba(52, 143, 246, 0.01) 0px 0px 0px 1px;
+}
+
+.gender-box {
+  margin-right: 5rem;
+}
+
+.flex-contaier:first-child {
+  margin-right: 5rem;
+}
+
+.flex-contaier:last-child {
+  margin-right: 10rem;
+}
+
+.text-box {
+  width: 35.25rem;
+  margin-right: 7rem;
+}
+
+.text-box > h2{
+  font-size: 3rem;
+  font-family: "SemiBold";
+  letter-spacing: -5px;
+  margin-bottom: 35px;
+}
+
+.text-box > p {
+  font-family: "Inter-Regular";
+  line-height: 1.5;
+}
+
+
+.svg-box {
+  display: flex;
+  align-items: center;
 }
