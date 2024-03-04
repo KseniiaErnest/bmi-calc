@@ -1,39 +1,133 @@
+@font-face {
+  font-family: "Inter-Regular";
+  src: local(Inter-Regular),
+    url("../assets/fonts/static/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: local(Inter-SemiBold),
+    url("../assets/fonts/static/Inter-SemiBold.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  color: #253347;
+}
+
+/* main {
+  height: 100vh;
+} */
 .calc-section {
-  width: 79.75rem;
-  height: 46rem;
+  width: 87.5rem;
+  height: 47rem;
   background-color: #ffff;
+  position: relative;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  padding-top: 1rem;
+  padding: 0 2rem 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .calc-section-text-container {
-  background-color: #345ef61c;
+  width: 61rem;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(171, 202, 238, 0.01),
+    rgba(52, 143, 246, 0.21)
+  );
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .calc-section-text-container > div {
   width: 35.25rem;
-  
+  margin-left: 7rem;
+  /* background-color: #25334744; */
 }
 
 .calc-section-text-container h1 {
   font-size: 4rem;
-  margin-top: 2rem;
-  
+  font-family: "SemiBold";
+  letter-spacing: -5px;
+  margin-bottom: 35px;
+}
+
+.calc-section-text-container p {
+  font-family: "Inter-Regular";
+  line-height: 1.5;
 }
 
 .calc-container {
-  width: 30rem;
+  position: absolute;
+  top: 23%;
+  right: 7%;
+  background-color: #ffff;
+  width: 35.25rem;
+  height: 30.25rem;
+  z-index: 9;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 16px;
+}
+
+.explanation-section {
+  width: 76rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 2rem;
+  margin-top: 3rem;
+  margin-bottom: 4.5rem;
+  display: flex;
+  gap: 8.1rem;
+}
+
+.img-container {
+  width: 564px;
+  height: 533px;
   background-color: aqua;
+}
+
+.explanation-container {
+  width: 29.1rem;
+  align-self: flex-end;
+}
+
+.explanation-container > h2 {
+  font-size: 3rem;
+  font-family: "SemiBold";
+  letter-spacing: -5px;
+  margin-bottom: 35px;
+}
+
+.explanation-container > p {
+  font-family: "Inter-Regular";
+  line-height: 1.5;
+}
+
+/*  */
+.to-do-section {
+  width: 97rem;
+  height: 26rem;
+  background-color: aqua;
+  margin: 0 auto;
+  margin-top: 4.5rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 2rem 2rem;
+  display: flex;
+  align-items: center;
+
+}
+
+.grid-container {
+  width: 72.5rem ;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: aliceblue;
+  margin: 0 auto;
 }
