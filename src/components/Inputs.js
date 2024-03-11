@@ -5,8 +5,6 @@ export default function Inputs({ height, onSetHeight, weight, onSetWeight }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    onSetHeight(height);
-    onSetWeight(weight);
   };
   return (
     <div className="input-section">

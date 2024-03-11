@@ -150,6 +150,17 @@ html {
   justify-content: center;
 }
 
+.bmi-result-box {
+  display: grid;
+  grid-template-columns: 12.8rem 12.8rem ;
+  font-family: "Inter-Regular";
+}
+
+.bmi > h2 {
+  font-size: 4rem;
+}
+
+
 
 /* //////////////////////// */
 
