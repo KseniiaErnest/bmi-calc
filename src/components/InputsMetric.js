@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Inputs({ height, onSetHeight, weight, onSetWeight }) {
+export default function InputsMetric({ height, onSetHeight, weight, onSetWeight }) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -8,17 +8,6 @@ export default function Inputs({ height, onSetHeight, weight, onSetWeight }) {
   };
   return (
     <div className="input-section">
-      <div className="input-container">
-        <label>
-          <input className="check" type="checkbox" />
-          Metric
-        </label>
-
-        <label>
-          <input className="check" type="checkbox" />
-          Imperial
-        </label>
-      </div>
 
       <form onSubmit={handleSubmit} className="input-container">
         <label className="input-label">

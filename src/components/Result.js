@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Result({ height, weight, bmi }) {
+  console.log(bmi);
   const minWeight = () => {
     if (!height) {
       return;
