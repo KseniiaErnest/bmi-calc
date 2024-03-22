@@ -4,40 +4,26 @@ import Result from './Result'
 import InputsImperial from './InputsImperial';
 
 export default function Calc() {
-const [height, setHeight] = useState('');
-const [weight, setWeight] = useState('');
+const [heightMetric, setHeightMetric] = useState('');
+const [weightMetric, setWeightMetric] = useState('');
 const [feet, setFeet] = useState('');
 const [inches, setInches] = useState('');
 const [stones, setStones] = useState('');
 const [pounds, setPounds] = useState('');
 const [isMetric, setIsMetric] = useState(true);
 
-// const bmi = () => {
-//   if (!height || !weight || !feet || !inches || !stones || !pounds) {
-//     return null;
-// }
-
-// if (isMetric) {
-//   return (parseFloat(weight) / (parseFloat(height / 100) * parseFloat(height / 100))).toFixed(2);
-// } else {
-//   const heightInInches = (parseFloat(feet) * 12) + parseFloat(inches);
-//   const weightInPounds = (parseFloat(stones) * 14) + parseFloat(pounds);
-//   return ((weightInPounds / (heightInInches * heightInInches)) * 703).toFixed(2);
-// }
-
-// }
+const heightInInches = (parseFloat(feet) * 12) + parseFloat(inches);
 
 const bmi = () => {
   if (isMetric) {
-    if (!height || !weight) {
+    if (!heightMetric || !weightMetric) {
       return null;
     }
-    return (parseFloat(weight) / ((parseFloat(height) / 100) * (parseFloat(height) / 100))).toFixed(2);
+    return (parseFloat(weightMetric) / ((parseFloat(heightMetric) / 100) * (parseFloat(heightMetric) / 100))).toFixed(2);
   } else {
     if (!feet || !inches || !stones || !pounds) {
       return null;
     }
-    const heightInInches = (parseFloat(feet) * 12) + parseFloat(inches);
     const weightInPounds = (parseFloat(stones) * 14) + parseFloat(pounds);
     return ((weightInPounds / (heightInInches * heightInInches)) * 703).toFixed(2);
   }
@@ -46,8 +32,8 @@ const bmi = () => {
 const handleToggleSystem = () => {
   setIsMetric(!isMetric);
 
-  setHeight('');
-  setWeight('');
+  setHeightMetric('');
+  setWeightMetric('');
 }
 
   return (
@@ -65,11 +51,11 @@ const handleToggleSystem = () => {
         </label>
       </div>
       {isMetric ? (
-        <InputsMetric height={height} onSetHeight={setHeight} weight={weight} onSetWeight={setWeight} />
+        <InputsMetric heightMetric={heightMetric} onSetHeight={setHeightMetric} weightMetric={weightMetric} onSetWeight={setWeightMetric} />
       ) : (
         <InputsImperial feet={feet} setFeet={setFeet} inches={inches} setInches={setInches} stones={stones} setStones={setStones} pounds={pounds} setPounds={setPounds}   />
       )}
-      <Result height={height} weight={weight} bmi={bmi()} />
+      <Result heightMetric={heightMetric} weightMetric={weightMetric} feet={feet} inches={inches} isMetric={isMetric} bmi={bmi()} heightInInches={heightInInches} />
     </div>
   )
 }
