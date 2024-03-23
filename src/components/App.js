@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Calc from "./Calc";
+import {  DarkModeContext } from "../context/DarkModeContext";
 // import imageManEating from "../../assets/images/image-man-eating.webp";
 
 export default function App() {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const handleDarkMode = () => {
+    toggleDarkMode();
+  }
+
   return (
-    <main>
+    
+    <main className={darkMode ? `dark-mode` : ``}>
+    <button onClick={handleDarkMode}>Switch Mode</button>
       <section className="calc-section">
         <div className="calc-section-text-container">
           <div className="mmm">
@@ -238,5 +246,7 @@ export default function App() {
         </div>
       </section>
     </main>
+    
+    
   );
 }

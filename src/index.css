@@ -16,13 +16,18 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   color: #253347;
+  height: 100%;
 }
 
-/* main {
-  height: 100vh;
-} */
+main {
+  height: 100%;
+}
+
+.dark-mode {
+  background-color: black;
+}
 .calc-section {
   width: 87.5rem;
   height: 47rem;
