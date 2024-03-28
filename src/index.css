@@ -16,7 +16,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   color: #253347;
   height: 100%;
 }
@@ -25,9 +26,6 @@ main {
   height: 100%;
 }
 
-.dark-mode {
-  background-color: black;
-}
 .calc-section {
   width: 87.5rem;
   height: 47rem;
@@ -94,7 +92,7 @@ main {
 
 .calc-container > h2 {
   font-family: "SemiBold";
-  font-size:1.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -103,6 +101,23 @@ main {
   justify-content: space-between;
   margin-top: 2rem;
 }
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10rem;
+  margin-top: 2rem;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: "SemiBold";
+}
+
+
 
 .imperial {
   flex-direction: column;
@@ -128,25 +143,50 @@ main {
   font-family: "SemiBold";
   padding: 1rem;
   border-radius: 0.8rem;
-  border: 1px solid #D8e2e7;
+  border: 1px solid #d8e2e7;
   margin-top: 10px;
 }
 
-
-
 .check {
+  appearance: none; /* Hide default checkbox */
+  -webkit-appearance: none; /* Hide default checkbox for older versions of Chrome/Safari */
+  -moz-appearance: none; /* Hide default checkbox for older versions of Firefox */
   width: 2rem;
   height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #d8e2e7;
+  cursor: pointer;
+  position: relative;
+}
 
+.check:checked {
+  background-color: #d6dffd;
+  
+}
+
+.check:before {
+  content: ''; /* Create a pseudo-element */
+  position: absolute; /* Position relative to the .check element */
+  top: 26%; /* Adjust position to create the effect */
+  left: 27%;
+  width: calc(100% - 50%); /* Adjust size to create the effect */
+  height: calc(100% - 50%);
+  border-radius: 50%;
+  background-color: #345ff6; /* Lighter shade of the main background color */
+  display: none; /* Hide initially */
+}
+
+.check:checked:before {
+  display: block; /* Show the pseudo-element when checkbox is checked */
 }
 
 .result-container {
-  background: linear-gradient(to left, #345ef6c9, #345ff6) ;
+  background: linear-gradient(to left, #345ef6c9, #345ff6);
   width: 31.25rem;
   height: 10.3rem;
-  border-top-right-radius: 90px ;
-  border-top-left-radius: 10px ;
-  border-bottom-right-radius: 90px ;
+  border-top-right-radius: 90px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 90px;
   border-bottom-left-radius: 10px;
   padding: 2rem;
   color: #ffff;
@@ -165,21 +205,28 @@ main {
 
 .welcome {
   flex-direction: column;
-  gap: 1.75rem;
   justify-content: center;
+  
+}
+
+.welcome > h2 {
+  font-family: "SemiBold";
+  margin-bottom: 1.75rem;
+}
+
+.welcome > p {
+  font-family: "Inter-Regular";
 }
 
 .bmi-result-box {
   display: grid;
-  grid-template-columns: 12.8rem 12.8rem ;
+  grid-template-columns: 12.8rem 12.8rem;
   font-family: "Inter-Regular";
 }
 
 .bmi > h2 {
   font-size: 4rem;
 }
-
-
 
 /* //////////////////////// */
 
@@ -232,21 +279,19 @@ main {
   border-radius: 30px;
   margin-top: 4.5rem;
   margin-bottom: 4.5rem;
-
 }
 
 .grid-container {
-  width: 72.5rem ;
+  width: 72.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0 auto;
   gap: 2rem;
 }
 
-
 .to-do-box h3 {
   font-size: 1.5rem;
-  font-family: 'SemiBold';
+  font-family: "SemiBold";
   margin-top: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -269,20 +314,19 @@ main {
   padding: 1.5rem 2rem 2rem;
 }
 
-
 .flex-contaier {
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
-
 }
 
 .limitation-box {
   width: 22.5rem;
   padding: 2rem;
   border-radius: 15px;
-font-family: "Inter-Regular";;
-  box-shadow: rgba(24, 67, 116, 0.226) 0px 10px 36px 0px, rgba(52, 143, 246, 0.01) 0px 0px 0px 1px;
+  font-family: "Inter-Regular";
+  box-shadow: rgba(24, 67, 116, 0.226) 0px 10px 36px 0px,
+    rgba(52, 143, 246, 0.01) 0px 0px 0px 1px;
 }
 
 .gender-box {
@@ -302,7 +346,7 @@ font-family: "Inter-Regular";;
   margin-right: 7rem;
 }
 
-.text-box > h2{
+.text-box > h2 {
   font-size: 3rem;
   font-family: "SemiBold";
   letter-spacing: -5px;
@@ -314,12 +358,45 @@ font-family: "Inter-Regular";;
   line-height: 1.5;
 }
 
-
 .svg-box {
   display: flex;
   align-items: center;
-  font-family: "SemiBold" ;
+  font-family: "SemiBold";
   gap: 0.8rem;
   margin-bottom: 1rem;
   font-size: 20px;
+}
+
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #e9ebed;
+}
+
+.dark-mode-extra {
+  background: linear-gradient(
+    to bottom right,
+    rgba(171, 202, 238, 0.01),
+    rgba(52, 143, 246, 0.21)
+  );
+}
+
+.dark-mode-calc {
+  background-color: #282828;
+  box-shadow: rgba(24, 67, 116, 0.226) 0px 10px 36px 0px,
+    rgba(52, 143, 246, 0.01) 0px 0px 0px 1px;
+  color: #e9ebed;
+}
+
+.theme-btn {
+  background-color: #345ff6;
+  padding: 0.5rem;
+  font-family: "SemiBold";
+  color: #e9ebed;
+  border: none;
+  border-radius: 10%;
+}
+
+.dark-input {
+  background-color: #345ff6;
+  color: #e9ebed;
 }

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import Calc from "./Calc";
 import {  DarkModeContext } from "../context/DarkModeContext";
-// import imageManEating from "../../assets/images/image-man-eating.webp";
+import imageManEating from "../image-man-eating.webp";
+
 
 export default function App() {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
@@ -12,9 +13,9 @@ export default function App() {
   return (
     
     <main className={darkMode ? `dark-mode` : ``}>
-    <button onClick={handleDarkMode}>Switch Mode</button>
-      <section className="calc-section">
-        <div className="calc-section-text-container">
+    <button className="theme-btn" onClick={handleDarkMode}>Switch Theme</button>
+      <section className={darkMode ? `calc-section dark-mode` : `calc-section`}>
+        <div className={darkMode ? `calc-section-text-container dark-mode-extra` : `calc-section-text-container`}>
           <div className="mmm">
             <h1>
               Body Mass <br />
@@ -29,11 +30,11 @@ export default function App() {
             </p>
           </div>
         </div>
-        <Calc />
+        <Calc darkMode={darkMode} />
       </section>
 
       <section className="explanation-section">
-        <div className="img-container">hello</div>
+        <div className="img-container"><img src={imageManEating} alt="Man eating"></img></div>
         <div className="explanation-container">
           <h2>What your BMI result means</h2>
           <p>
