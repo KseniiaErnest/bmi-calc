@@ -47,26 +47,35 @@ main {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  justify-content: space-around;
 }
 
-.calc-section-text-container > div {
+.calc-section-text-container > svg {
+  margin-left: 7rem;
+  cursor: pointer;
+}
+
+.calc-section-text-box {
   width: 35.25rem;
   margin-left: 7rem;
-  /* background-color: #25334744; */
+  margin-bottom: 9rem;
+  
 }
 
-.calc-section-text-container h1 {
+.calc-section-text-box h1 {
   font-size: 4rem;
   font-family: "SemiBold";
   letter-spacing: -5px;
   margin-bottom: 35px;
 }
 
-.calc-section-text-container p {
+.calc-section-text-box p {
   font-family: "Inter-Regular";
   line-height: 1.5;
 }
+
 /* ///////////////////////////// */
 
 .calc-container {
@@ -96,11 +105,14 @@ main {
   margin-bottom: 1rem;
 }
 
+
+/* units */
 .input-container {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
 }
+
 
 .checkbox-container {
   display: flex;
@@ -116,8 +128,6 @@ main {
   gap: 1.5rem;
   font-family: "SemiBold";
 }
-
-
 
 .imperial {
   flex-direction: column;
@@ -136,7 +146,7 @@ main {
   color: #7c7e80af;
 }
 
-.input-label > input {
+.input-with-unit > input {
   width: 14.8rem;
   height: 4.3rem;
   font-size: 1.5rem;
@@ -145,7 +155,30 @@ main {
   border-radius: 0.8rem;
   border: 1px solid #d8e2e7;
   margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3ms;
+  outline-color: #345ff6;
+  
 }
+
+
+.input-with-unit > input:hover {
+  border: 1px solid #345ff6;
+}
+
+.input-with-unit {
+  position: relative;
+}
+
+.unit {
+  position: absolute;
+  top: 55%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  color: #345ff6;
+  font-size: 1.5rem;
+}
+
 
 .check {
   appearance: none; /* Hide default checkbox */
@@ -161,11 +194,10 @@ main {
 
 .check:checked {
   background-color: #d6dffd;
-  
 }
 
 .check:before {
-  content: ''; /* Create a pseudo-element */
+  content: ""; /* Create a pseudo-element */
   position: absolute; /* Position relative to the .check element */
   top: 26%; /* Adjust position to create the effect */
   left: 27%;
@@ -206,7 +238,6 @@ main {
 .welcome {
   flex-direction: column;
   justify-content: center;
-  
 }
 
 .welcome > h2 {
@@ -243,12 +274,16 @@ main {
 .img-container {
   width: 564px;
   height: 533px;
-  background-color: aqua;
+}
+
+.img-container > img {
+  width: 100%;
 }
 
 .explanation-container {
   width: 29.1rem;
   align-self: flex-end;
+  margin-bottom: 2rem;
 }
 
 .explanation-container > h2 {
@@ -400,3 +435,10 @@ main {
   background-color: #345ff6;
   color: #e9ebed;
 }
+
+
+/* Mobile */
+/* @media screen and (max-width: 50em) {
+
+} */
+

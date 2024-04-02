@@ -40,6 +40,10 @@ export default function Calc({ darkMode }) {
 
     setHeightMetric("");
     setWeightMetric("");
+    setFeet('');
+    setInches('');
+    setStones('');
+    setPounds('');
   };
 
   return (
